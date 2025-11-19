@@ -1,11 +1,83 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!--SEO Optimization-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Project X Delivering Company — fast, reliable, and global delivery services with real-time tracking.">
+        <meta name="keywords" content="delivery, shipping, logistics, courier, Project X">
+        <meta name="author" content="Project X Delivering Company">
+        
         <title>PROJECT X | Frequently Asked Questions</title>
 
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f2f2f2;
+        }
+        header {
+            background: #111;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+            transition: transform .2s;
+        }
+        .card:hover {
+            transform: scale(1.02);
+        }
+        #trackingResult {
+            font-weight: bold;
+            color: green;
+            margin-top: 10px;
+        }
+        footer {
+            background: #111;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+
+
         <link rel="stylesheet" href="css/mystyle.css">
+        <script>
+            function change_content(){
+                document.getElementById().innerHTML =
+            }
+        </script>
+        <script src="js/myscript.js"></script>
+
     </head>
     <body>
+         <!-- HEADER -->
+    <header>
+        <h1>Project X Delivering Company</h1>
+        <p>Fast. Reliable. Global.</p>
+    </header>
+        
+        <!--Navigation Bar-->
         <a href="index.html">Home</a>
         <a href="services.html">Our Services</a>
         <a href="servicedeliveryprocess.html">Service Delivery Process</a>
@@ -14,6 +86,84 @@
         <a href="contactinformation.html">Contact Information</a>
         <a href="faq.html">FAQs</a>
         <h1 style="font-size:60px;">Frequently Asked Questions</h1>
+       
+        <!-- MAIN CONTENT -->
+    <div class="container">
+
+        <!-- Search/Tracking Functionality -->
+        <div class="card">
+            <h2>Track Your Package</h2>
+            <input type="text" id="trackingNumber" placeholder="Enter Tracking Number">
+            <button onclick="trackPackage()">Track</button>
+            <p id="trackingResult"></p>
+        </div>
+
+         <!-- Dynamic Content -->
+        <div class="card">
+            <h2>Today's Featured Service</h2>
+            <p id="dynamicService">Loading today's featured service...</p>
+        </div>
+
+        <!-- Interactive Element -->
+        <div class="card">
+            <h2>Delivery Cost Estimator</h2>
+            <label>Package Weight (kg):</label>
+            <input type="number" id="weight" min="1">
+            <button onclick="calculateCost()">Calculate</button>
+            <p id="costResult"></p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Project X Delivering Company — All Rights Reserved</p>
+    </footer>
+
+     <!-- JAVASCRIPT ENHANCEMENTS -->
+    <script>
+        // Feature 1: Package Tracking Simulation
+        function trackPackage() {
+            const number = document.getElementById("trackingNumber").value;
+            const result = document.getElementById("trackingResult");
+
+            if (number.trim() === "") {
+                result.textContent = "Please enter a valid tracking number.";
+                result.style.color = "red";
+                return;
+            }
+
+            result.style.color = "green";
+            result.textContent = "Tracking Number " + number + ": In Transit ✔";
+        }
+
+        // Feature 2: Dynamic daily featured service
+        const services = [
+            "Express Same-Day Delivery",
+            "Overnight International Shipping",
+            "Eco-Friendly Bicycle Courier",
+            "Bulk Business Shipping Solutions"
+        ];
+
+        document.getElementById("dynamicService").textContent =
+            services[Math.floor(Math.random() * services.length)];
+
+        // Feature 3: Delivery Cost Estimator
+        function calculateCost() {
+            const weight = document.getElementById("weight").value;
+            const costResult = document.getElementById("costResult");
+
+            if (weight <= 0 || weight === "") {
+                costResult.textContent = "Please enter a valid weight.";
+                costResult.style.color = "red";
+                return;
+            }
+
+            const price = (weight * 4.99).toFixed(2);
+            costResult.style.color = "green";
+            costResult.textContent = "Estimated Delivery Cost: $" + price;
+        }
+    </script>
 
         <ol>
             <li>Q1: What industries does Project X serve?</li>
@@ -28,6 +178,7 @@
             <ul>A: We provide both short-term and long-term service agreements depending on client preferences.</ul>
         </ol>
 
+        <botton onclick="document.getElementById('change').innerHTML"
     </body>
 
 
